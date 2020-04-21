@@ -44,19 +44,31 @@ def print_recipients
       recipients_str += "#{val}, "
     end
   }
-  recipients_str
+  print recipients_str
 end
 
 def print_one_article(article)
   # Write a method that will take an article hash
   # and print the title, author and text as a formatted string
   # See the README/sample output for examples
+
+  return_string = "#{article[:title]}\nby: #{article[:author]}\n#{article[:text]}"
+
 end
+
+#puts print_one_article({"author": "Destiny Blanda Bruen II", "title": "Mining", "text": "The orthogonal features, when combined, can explode into complexity."})
 
 def print_many_articles(articles)
   # Write a method that will take in an array of article hashes
   # and format each one using the print_one_article method
+
+  articles.each do |article|
+    puts "#{print_one_article(article)} \n\n"
+  end
+
 end
+
+
 
 def format_campus_location(campus)
   
@@ -64,7 +76,7 @@ def format_campus_location(campus)
 end
 
 def format_subject
-  puts "#{format_campus_location(CAMPUS)} Newsletter - #{DATE}\n\n"
+  puts "#{format_campus_location(CAMPUS)} Newsletter - #{DATE}\n"
 end
 
 def format_footer(campus)
